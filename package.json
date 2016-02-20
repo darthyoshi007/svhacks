@@ -1,0 +1,20 @@
+{
+  "name": "svhacks",
+  "version": "0.0.1",
+  "description": "n/a",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darthyoshi007/"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darthyoshi007/"
+  },
+  "homepage": "https://github.com/darthyoshi007/svhacks",
+  "dependencies": {
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+  }
+}
