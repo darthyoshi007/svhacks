@@ -7,7 +7,7 @@ server.listen(8080, function() {
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : 'your-app-id',
+      appId      : '960585080655610',
       xfbml      : true,
       version    : 'v2.5'
     });
