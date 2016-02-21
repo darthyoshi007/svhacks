@@ -6,24 +6,57 @@ FacebookStrategy = require('passport-facebook');
 app.use(passport.initialize());
 app.use(passport.session());
 var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+
+var users = [];
+var localUsername;
 
 server.listen(8080, function() {
     return console.log('Server listening at port 8080');
 });
 
-passport.use(new FacebookStrategy({
-    clientID: "1031650730207594",
-    clientSecret: "daeadb3b487b60050d973c976dcb0a0d",
-    callbackURL: "http://www.localhost:8080/auth/facebook/callback",
-    profileFields: ['id', 'name', 'picture.type(large)', 'emails', 'displayName', 'about', 'gender']
-},
-  function(accessToken, refreshToken, profile, cb) {
-    User.findOrCreate({ facebookId: profile.id }, function (err, user) {
-      return cb(err, user);
-    });
-  }
-));
 
+io.on('connection', function (socket) {
+
+  socket.on('login', function(data) {
+    if (users[data] == null){
+      users[data] = {
+        userName : data
+      };
+      localUsername = data;
+      console.log(localUsername+"1");
+    }
+  });
+
+  socket.on('userAdded', function(data) {
+    if (users[localUsername] != null){
+      socket.emit('userAlreadyAdded', true);
+    }
+    else socket.emit('userAlreadyAdded', false)
+  });
+
+  // passport.use(new FacebookStrategy({
+  //   clientID: "1031650730207594",
+  //   clientSecret: "daeadb3b487b60050d973c976dcb0a0d",
+  //   callbackURL: "http://www.localhost:8080/goals",
+  //   profileFields: ['id', 'name', 'picture.type(large)', 'emails', 'displayName', 'about', 'gender']
+  // },
+  // (function(_this) {
+  //     return function(accessToken, refreshToken, profile, cb) {
+  //       if (users[localUsername] == null) {
+  //         users[localUsername] = {};
+  //       }
+  //       console.log(profile.id);
+  //       console.log("j");
+  //       users[localUsername] = {
+  //         id: profile.id,
+  //         name: profile.name.givenName + " " + profile.name.familyName,
+  //         avatar: profile.photos[0].value
+  //       }
+  //       return results;
+  //     };
+  //   })(this)));
+});
 
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
