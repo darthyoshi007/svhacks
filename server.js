@@ -41,3 +41,7 @@ app.get('/app.js', function(req, res){
 app.get('/addGoal', function(req, res){
   res.sendFile(path.join(__dirname + '/addGoal.html'));
 });
+
+app.get('/specGoal', function(req, res){
+  res.sendFile(path.join(__dirname + '/specGoal.html'));
+});

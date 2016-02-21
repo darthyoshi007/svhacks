@@ -55,18 +55,47 @@
           </ul>
         </div>
       </header>
-      <div id = "goals" class="mdl-layout__content">
+      <div id="specGoal" class="mdl-layout_content">
         <style>
-          .demo-list-item {
-            width: 300px;
-          }
+        .demo-list-item{
+          width: 300px;
+        }
         </style>
         <ul class="demo-list-item mdl-list">
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-              Bryan Cranston
+          <li class="mdl-list_item">
+            <span class="mdl-list_item-primary-content">
+              <div id="txtHint">Please be as detailed as possible.</div>
+              <form action=""> 
+               <select name="customers">
+                 <option value="">Select a discipline:</option>
+                 <option value="1">Fitness</option>
+                 <option value="2">Education</option>
+                 <option value="3">Nutrition</option>
+                 <option value="4">Weightloss</option>
+                 <option value="5">Philanthropy</option>
+                 <option value="6">ARK</option>
+                 <option value="7">Other</option>
+               </select>
+              </form>
             </span>
           </li>
+          <!-- <li class="mdl-list_item">
+            <span class="mdl-list_item-primary-content">
+                <form action=""> 
+                <select name="customers">
+                <option value="">Select a time frame:</option>
+                <option value="ALFKI">One Week</option>
+                <option value="NORTS ">Two Weeks</option>
+                <option value="WOLZA">One Month</option>
+                <option value="WOLZA">Three Months</option>
+                <option value="WOLZA">Six Months</option>
+                <option value="WOLZA">One Year</option>
+                <option value="WOLZA">More than One Year</option>
+                </select>
+                </form>
+                <br>
+            </span>
+          </li> -->
         </ul>
       </div>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
@@ -83,8 +112,10 @@
           </div>
         </header>
         <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-          <a class="mdl-navigation__link" href="/specGoal"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Specific Goal</a>
+          <a class="mdl-navigation__link" href="/goals"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <div>
+            <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Specific Goal</a>
+          </div>
           <div class="mdl-layout-spacer"></div>
           <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
         </nav>
