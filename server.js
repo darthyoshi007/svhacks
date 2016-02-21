@@ -10,6 +10,7 @@ server.listen(8080, function() {
       appId      : '960585080655610',
       xfbml      : true,
       version    : 'v2.5'
+      status     : true,
     });
   };
 
