@@ -26,6 +26,10 @@ server.listen(8080, function() {
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/', function(req, res){
+app.get('/goals', function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/addGoal', function(req, res){
+  res.sendFile(path.join(__dirname + '/addGoal.html'));
 });
