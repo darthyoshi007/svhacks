@@ -59,7 +59,7 @@
     }
     </style>
   </head>
-  <body>
+  <body id="body">
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
@@ -84,10 +84,12 @@
           </ul>
         </div>
       </header>
+      <div id = "goals" class="mdl-layout__content">
+      </div>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
-          <img src="images/user.jpg" class="demo-avatar">
-          <div class="demo-avatar-dropdown">
+          <img src="" class="demo-avatar"> -->
+          <div id = "avatarthing" class="demo-avatar-dropdown">
             <span>hello@example.com</span>
             <div class="mdl-layout-spacer"></div>
             <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -116,12 +118,22 @@
         </nav>
       </div>
     </div>
-      <a id="addGoal">
+      <a id="view-source" onclick="addGoal()" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
         <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
           <i class="material-icons">add</i>
         </button>
       </a>
     <script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <script>
+      function addGoal(){
+        console.log("hi");
+        var btn = document.createElement("BUTTON");
+        var t = document.createTextNode("CLICK ME");
+        btn.appendChild(t);
+        var stupidshit = document.getElementById("goals");
+        stupidshit.appendChild(btn);
+      }
+    </script>
     <script src="./release/app.js"></script>
   </body>
 </html>
