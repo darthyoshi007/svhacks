@@ -7,8 +7,8 @@ app.use(passport.session());
 var server = require('http').createServer(app);
 
 passport.use(new FacebookStrategy({
-    clientID: "240832839587252",
-    clientSecret: "26d026e64e397e8e3dcc7fc50fff1aef",
+    clientID: "1031650730207594",
+    clientSecret: "daeadb3b487b60050d973c976dcb0a0d",
     callbackURL: "http://www.localhost:8080/auth/facebook/callback",
     profileFields: ['id', 'name', 'picture.type(large)', 'emails', 'displayName', 'about', 'gender']
 },
