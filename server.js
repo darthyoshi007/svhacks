@@ -1,9 +1,10 @@
-(function() {
 var express = require('express');
-var app = express();
-var server = require('http').createServer(app);
+var server = express();
 
 server.listen(8080, function() {
     return console.log('Server listening at port 8080');
 });
-}).call(this);
+
+server.get('/', function (req, res) {
+  res.send('Hello World!');
+});
