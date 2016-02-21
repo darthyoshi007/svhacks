@@ -7,6 +7,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 var server = require('http').createServer(app);
 
+server.listen(8080, function() {
+    return console.log('Server listening at port 8080');
+});
+
 passport.use(new FacebookStrategy({
     clientID: "1031650730207594",
     clientSecret: "daeadb3b487b60050d973c976dcb0a0d",
@@ -20,14 +24,16 @@ passport.use(new FacebookStrategy({
   }
 ));
 
-server.listen(8080, function() {
-    return console.log('Server listening at port 8080');
-});
+
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
 app.get('/goals', function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+app.get('/node_modules/socket.io-client/socket.io.js', function(req, res){
+  res.sendFile(path.join(__dirname + '/node_modules/socket.io-client/socket.io.js'));
 });
 
 app.get('/styles.css', function(req, res){
