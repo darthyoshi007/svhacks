@@ -222,3 +222,35 @@ _:-ms-input-placeholder, :root .demo-graph {
       -ms-flex-align: center;
           align-items: center;
 }
+
+#addGoal{
+  position: fixed;
+  display: block;
+  right: 0;
+  bottom: 0;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  z-index: 900;
+}
+
+#overlay{
+  float: right;
+  background-color: rgb(120,190,190);
+  box-shadow: 0 0 5px 1px #969696;
+  position: absolute;
+  height: 500px;
+  width: 500px;
+  bottom: 0px;
+  right: 10px;
+}
+#submitbtn{
+  left: 10;
+}
+#newGoal{
+  outline: none;
+  border: none;
+  resize: none;
+  font-size: 17;
+  height: 400px;
+  width: 500px;
+}
