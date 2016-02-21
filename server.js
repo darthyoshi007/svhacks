@@ -30,6 +30,14 @@ app.get('/goals', function(req, res){
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 
+app.get('/styles.css', function(req, res){
+  res.sendFile(path.join(__dirname + '/styles.css'));
+});
+
+app.get('/app.js', function(req, res){
+  res.sendFile(path.join(__dirname + '/app.js'));
+});
+
 app.get('/addGoal', function(req, res){
   res.sendFile(path.join(__dirname + '/addGoal.html'));
 });

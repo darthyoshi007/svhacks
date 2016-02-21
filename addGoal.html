@@ -34,7 +34,7 @@
     <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
       <header class="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">Goals</span>
+          <span class="mdl-layout-title">Add a Goal</span>
           <div class="mdl-layout-spacer"></div>
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
             <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
@@ -55,7 +55,18 @@
           </ul>
         </div>
       </header>
-      <div id = "goals" class="mdl-layout__content">
+      <div id = "bodyText" class="mdl-layout__content">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="sample3">
+          <label class="mdl-textfield__label" for="sample3">Enter a Goal...</label>
+        </div>
+        <br></br>
+        <button onclick = "getGoal()" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+          Submit
+        </button>
+      </div>
+      <div id = "bodySubmit" class="mdl-layout__content">
+
       </div>
       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
         <header class="demo-drawer-header">
