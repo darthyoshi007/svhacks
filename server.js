@@ -1,5 +1,6 @@
 var express = require('express');
 var app = express();
+var path = require("path");
 passport = require('passport');
 FacebookStrategy = require('passport-facebook');
 app.use(passport.initialize());
@@ -25,6 +26,6 @@ server.listen(8080, function() {
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.get('/', function(req, res){
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
