@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express'); //server TODO add firebase facebook OAuth2 database
 var app = express();
 var path = require("path");
 passport = require('passport');

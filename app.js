@@ -1,4 +1,4 @@
-var localGoals = [];
+var localGoals = []; //client
 var socket = io('http://localhost:8080');
 
 function addGoal() {
