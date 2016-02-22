@@ -7,9 +7,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
-
-var users = [];
-var localUsername;
+var Firebase = require("firebase");
 
 server.listen(8080, function() {
     return console.log('Server listening at port 8080');
@@ -19,20 +17,9 @@ server.listen(8080, function() {
 io.on('connection', function (socket) {
 
   socket.on('login', function(data) {
-    if (users[data] == null){
-      users[data] = {
-        userName : data
-      };
-      localUsername = data;
-      console.log(localUsername+"1");
-    }
   });
 
   socket.on('userAdded', function(data) {
-    if (users[localUsername] != null){
-      socket.emit('userAlreadyAdded', true);
-    }
-    else socket.emit('userAlreadyAdded', false)
   });
 
   // passport.use(new FacebookStrategy({

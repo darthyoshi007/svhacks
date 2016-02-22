@@ -1,18 +1,5 @@
 var localGoals = [];
 var socket = io('http://localhost:8080');
-var userName;
-userName = prompt("Please enter your username.").value;
-socket.emit('userAdded', userName);
-socket.on('userAlreadyAdded', function(data){
-  if (data == true){
-    window.alert("Welcome Back");
-  }
-  else {
-    socket.emit('login', userName);
-  }
-});
-
-document.getElementById("name").innerHTML = userName;
 
 function addGoal() {
    var dinp = document.createElement("DIV");
@@ -49,6 +36,8 @@ function addGoal() {
    var asdf = document.getElementById("goals");
    asdf.appendChild(dinp);
 }
+
+socket.emit('login', "OAuth2");
 
 function getGoal() {
   // console.log(document.getElementById("newGoal").value);
